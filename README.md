@@ -1,16 +1,30 @@
-# adam
+# Counter App 🏀
 
-A new Flutter project.
+Counter App is a simple and interactive scoring app designed for tracking scores between two teams, perfect for sports like basketball or any competitive games!
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📋 Features
 
-A few resources to get you started if this is your first Flutter project:
+- Tracks scores for Team A and Team B.
+- Allows adding 1, 2, or 3 points for each team.
+- Includes functionality to decrement scores.
+- Reset button to clear all scores and start fresh.
+- Clean and user-friendly interface.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠 Technologies Used
+
+- Flutter: A powerful UI toolkit for building natively compiled applications.
+- Dart: The programming language utilized for Flutter development.
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally:
+
+1. Clone the repository:
+   `bash 
+   git clone https://github.com/ibnRizk/Basketball-pointer

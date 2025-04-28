@@ -12,9 +12,9 @@ class AdamCaffee extends StatefulWidget {
 }
 
 class _AdamCaffeeState extends State<AdamCaffee> {
-  int a = 0;
+  int teamAPoint = 0;
 
-  int b = 0;
+  int teamBPoint = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                       style: TextStyle(color: Colors.black, fontSize: 32),
                     ),
                     Text(
-                      '$a',
+                      '$teamAPoint',
                       style:
                           const TextStyle(color: Colors.black, fontSize: 120),
                     ),
@@ -56,7 +56,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                           minimumSize: const Size(150, 60)),
                       onPressed: () {
                         setState(() {
-                          a++;
+                          teamAPoint++;
                         });
                       },
                       child: const Text(
@@ -73,7 +73,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                           minimumSize: const Size(150, 60)),
                       onPressed: () {
                         setState(() {
-                          a += 2;
+                          teamAPoint += 2;
                         });
                       },
                       child: const Text(
@@ -90,7 +90,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                           minimumSize: const Size(150, 60)),
                       onPressed: () {
                         setState(() {
-                          a += 3;
+                          teamAPoint += 3;
                         });
                       },
                       child: const Text(
@@ -107,7 +107,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                           minimumSize: const Size(150, 60)),
                       onPressed: () {
                         setState(() {
-                          a--;
+                          teamAPoint--;
                         });
                       },
                       child: const Text(
@@ -133,7 +133,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                       style: TextStyle(color: Colors.black, fontSize: 32),
                     ),
                     Text(
-                      '$b',
+                      '$teamBPoint',
                       style:
                           const TextStyle(color: Colors.black, fontSize: 120),
                     ),
@@ -143,7 +143,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                           minimumSize: const Size(150, 60)),
                       onPressed: () {
                         setState(() {
-                          b++;
+                          teamBPoint++;
                         });
                       },
                       child: const Text(
@@ -160,7 +160,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                           minimumSize: const Size(150, 60)),
                       onPressed: () {
                         setState(() {
-                          b += 2;
+                          teamBPoint += 2;
                         });
                       },
                       child: const Text(
@@ -177,7 +177,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                           minimumSize: const Size(150, 60)),
                       onPressed: () {
                         setState(() {
-                          b += 3;
+                          teamBPoint += 3;
                         });
                       },
                       child: const Text(
@@ -194,7 +194,7 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                           minimumSize: const Size(150, 60)),
                       onPressed: () {
                         setState(() {
-                          b--;
+                          teamBPoint--;
                         });
                       },
                       child: const Text(
@@ -215,8 +215,8 @@ class _AdamCaffeeState extends State<AdamCaffee> {
                   minimumSize: const Size(150, 60)),
               onPressed: () {
                 setState(() {
-                  b = 0;
-                  a = 0;
+                  teamBPoint = 0;
+                  teamAPoint = 0;
                 });
               },
               child: const Text(

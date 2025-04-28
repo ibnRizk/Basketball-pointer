@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Adam_Caffee());
+  runApp(const AdamCaffee());
 }
 
-class Adam_Caffee extends StatefulWidget {
+class AdamCaffee extends StatefulWidget {
+  const AdamCaffee({super.key});
+
   @override
-  State<Adam_Caffee> createState() => _Adam_CaffeeState();
+  State<AdamCaffee> createState() => _AdamCaffeeState();
 }
 
-class _Adam_CaffeeState extends State<Adam_Caffee> {
+class _AdamCaffeeState extends State<AdamCaffee> {
   int a = 0;
 
   int b = 0;

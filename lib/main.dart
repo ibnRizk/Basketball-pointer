@@ -1,231 +1,197 @@
+import 'package:adam/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const AdamCaffee());
 }
 
-class AdamCaffee extends StatefulWidget {
+class AdamCaffee extends StatelessWidget {
   const AdamCaffee({super.key});
 
   @override
-  State<AdamCaffee> createState() => _AdamCaffeeState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => CounterCubit(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+      ),
+    );
+  }
 }
 
-class _AdamCaffeeState extends State<AdamCaffee> {
-  int teamAPoint = 0;
-
-  int teamBPoint = 0;
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.orange,
-          title: const Center(
-            child: Center(
-              child: Text(
-                'Counter',
-                style: TextStyle(
-                    fontFamily: 'Pacifico', color: Colors.black, fontSize: 36),
-              ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: const Center(
+          child: Center(
+            child: Text(
+              'Counter',
+              style: TextStyle(
+                  fontFamily: 'Pacifico', color: Colors.black, fontSize: 36),
             ),
           ),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    const Text(
-                      'Team A',
-                      style: TextStyle(color: Colors.black, fontSize: 32),
-                    ),
-                    Text(
-                      '$teamAPoint',
-                      style:
-                          const TextStyle(color: Colors.black, fontSize: 120),
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          minimumSize: const Size(150, 60)),
-                      onPressed: () {
-                        setState(() {
-                          teamAPoint++;
-                        });
-                      },
-                      child: const Text(
-                        'Add 1 Point',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          minimumSize: const Size(150, 60)),
-                      onPressed: () {
-                        setState(() {
-                          teamAPoint += 2;
-                        });
-                      },
-                      child: const Text(
-                        'Add 2 Point',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          minimumSize: const Size(150, 60)),
-                      onPressed: () {
-                        setState(() {
-                          teamAPoint += 3;
-                        });
-                      },
-                      child: const Text(
-                        'Add 3 Point',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          minimumSize: const Size(150, 60)),
-                      onPressed: () {
-                        setState(() {
-                          teamAPoint--;
-                        });
-                      },
-                      child: const Text(
-                        '-1',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 450,
-                  child: VerticalDivider(
-                    color: Colors.grey,
-                    thickness: 1,
-                    indent: 70,
-                    endIndent: 90,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  const Text(
+                    'Team A',
+                    style: TextStyle(color: Colors.black, fontSize: 32),
                   ),
-                ),
-                Column(
-                  children: [
-                    const Text(
-                      'Team B',
-                      style: TextStyle(color: Colors.black, fontSize: 32),
+                  Text(
+                    '0',
+                    style: const TextStyle(color: Colors.black, fontSize: 120),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        minimumSize: const Size(150, 60)),
+                    onPressed: () {},
+                    child: const Text(
+                      'Add 1 Point',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
-                    Text(
-                      '$teamBPoint',
-                      style:
-                          const TextStyle(color: Colors.black, fontSize: 120),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        minimumSize: const Size(150, 60)),
+                    onPressed: () {},
+                    child: const Text(
+                      'Add 2 Point',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          minimumSize: const Size(150, 60)),
-                      onPressed: () {
-                        setState(() {
-                          teamBPoint++;
-                        });
-                      },
-                      child: const Text(
-                        'Add 1 Point',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        minimumSize: const Size(150, 60)),
+                    onPressed: () {},
+                    child: const Text(
+                      'Add 3 Point',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
-                    const SizedBox(
-                      height: 16,
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        minimumSize: const Size(150, 60)),
+                    onPressed: () {},
+                    child: const Text(
+                      '-1',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          minimumSize: const Size(150, 60)),
-                      onPressed: () {
-                        setState(() {
-                          teamBPoint += 2;
-                        });
-                      },
-                      child: const Text(
-                        'Add 2 Point',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          minimumSize: const Size(150, 60)),
-                      onPressed: () {
-                        setState(() {
-                          teamBPoint += 3;
-                        });
-                      },
-                      child: const Text(
-                        'Add 3 Point',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          minimumSize: const Size(150, 60)),
-                      onPressed: () {
-                        setState(() {
-                          teamBPoint--;
-                        });
-                      },
-                      child: const Text(
-                        '-1',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 45,
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
-                  minimumSize: const Size(150, 60)),
-              onPressed: () {
-                setState(() {
-                  teamBPoint = 0;
-                  teamAPoint = 0;
-                });
-              },
-              child: const Text(
-                'Reset',
-                style: TextStyle(color: Colors.black, fontSize: 20),
+                  ),
+                ],
               ),
+              const SizedBox(
+                height: 450,
+                child: VerticalDivider(
+                  color: Colors.grey,
+                  thickness: 1,
+                  indent: 70,
+                  endIndent: 90,
+                ),
+              ),
+              Column(
+                children: [
+                  const Text(
+                    'Team B',
+                    style: TextStyle(color: Colors.black, fontSize: 32),
+                  ),
+                  Text(
+                    '0',
+                    style: const TextStyle(color: Colors.black, fontSize: 120),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        minimumSize: const Size(150, 60)),
+                    onPressed: () {},
+                    child: const Text(
+                      'Add 1 Point',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        minimumSize: const Size(150, 60)),
+                    onPressed: () {},
+                    child: const Text(
+                      'Add 2 Point',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        minimumSize: const Size(150, 60)),
+                    onPressed: () {},
+                    child: const Text(
+                      'Add 3 Point',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                        minimumSize: const Size(150, 60)),
+                    onPressed: () {},
+                    child: const Text(
+                      '-1',
+                      style: TextStyle(color: Colors.black, fontSize: 20),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 45,
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange,
+                minimumSize: const Size(150, 60)),
+            onPressed: () {},
+            child: const Text(
+              'Reset',
+              style: TextStyle(color: Colors.black, fontSize: 20),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
